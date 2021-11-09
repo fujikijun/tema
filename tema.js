@@ -73,6 +73,11 @@ function preload()
 {
   font = loadFont('data/arial.ttf');
   loading = loadImage('data/loading.png');
+
+  movie = createVideo(['data/tema.mp4']);
+  movie.id( "video" );
+  movie.hide();
+  //movie.loop();
 }
 
 //--------------------------------------------------------------------
@@ -104,11 +109,6 @@ function setup()
   canvas.style('left', x);
   canvas.style('top', y);
   canvas.id( "canvas" );
-
-  movie = createVideo(['data/tema.mp4']);
-  movie.id( "video" );
-  movie.hide();
-  //movie.loop(); 
 
   capture = createCapture( VIDEO );
   capture.id( "capture" );
@@ -215,7 +215,7 @@ function draw()
   imageMode(CENTER);
   image( loading, width/2, height/2 );
   imageMode(CORNER);
-  
+
   if ( isPlaying )
   {
     image( movie, 0, 0, width, height ); // draw the video frame to canvas
