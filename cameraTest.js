@@ -98,22 +98,22 @@ function setup()
   x = ( windowWidth - w*float(BASE_DISPLAY_WIDTH) ) / 2;
   y = ( windowHeight - h*float(BASE_DISPLAY_HEIGHT) ) / 2;
 
-  let canvas = createCanvas( w*float(BASE_DISPLAY_WIDTH), h*float(BASE_DISPLAY_HEIGHT) );
+  let canvas = createCanvas( 400, 210 );
   canvas.style('z-index', '-1');
   canvas.style('position', 'fixed');
   canvas.style('left', x);
-  canvas.style('top', y);
+  canvas.style('top', 320);
   canvas.id( "canvas" );
 
-  movie = createVideo(['data/tema.mp4']);
-  movie.id( "video" );
-  movie.hide();
+  //movie = createVideo(['data/hand.mp4']);
+  //movie.id( "video" );
+  //movie.hide();
   //movie.loop();
   
   capture = createCapture( VIDEO );
   capture.id( "capture" );
   capture.size(cameraWidth, cameraHeight);
-  capture.hide();
+  //capture.hide();
 
   const captureElement = document.getElementById("capture");
   handTrack.startVideo(captureElement).then(function (status) {
@@ -126,8 +126,8 @@ function setup()
   }
   );
 
-  const videoElement = document.getElementById("video");
-  videoElement.playbackRate = 1.0;
+  //const videoElement = document.getElementById("video");
+  //videoElement.playbackRate = 1.0;
 }
 
 //--------------------------------------------------------------------
@@ -216,20 +216,21 @@ function draw()
   image( loading, width/2, height/2 );
   imageMode(CORNER);
 
-  if ( isPlaying )
+  //if ( isPlaying )
   {
-    image( movie, 0, 0, width, height ); // draw the video frame to canvas
+    //image( movie, 0, 0, width, height ); // draw the video frame to canvas
     if ( isHand )
     {
       noStroke();
-      fill( 255, 127 );
+      fill( 0, 127 );
       ellipse( 
         map(posX, 0, cameraWidth, 0, width), 
         map(posY, 0, cameraHeight, 0, height), 
         128, 128 );
       fill( 255 );
     }
-  } else
+  } 
+  //else
   {
   }
 
@@ -244,7 +245,7 @@ function action()
 {
   if ( isPlaying )
   {
-    movie.loop();
+    //movie.loop();
   } else
   {
     return;
@@ -283,10 +284,10 @@ function action()
     s = 0.1;
   }
 
-  console.log( s );
+  console.log( posX );
 
   if ( isPlaying )
   {
-    movie.speed( s );
+    //movie.speed( s );
   }
 }
