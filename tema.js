@@ -73,11 +73,6 @@ function preload()
 {
   font = loadFont('data/arial.ttf');
   loading = loadImage('data/loading.png');
-
-  movie = createVideo(['data/tema.mp4']);
-  movie.id( "video" );
-  movie.hide();
-  //movie.loop();
 }
 
 //--------------------------------------------------------------------
@@ -110,6 +105,11 @@ function setup()
   canvas.style('top', y);
   canvas.id( "canvas" );
 
+  movie = createVideo(['data/tema.mp4']);
+  movie.id( "video" );
+  movie.hide();
+  //movie.loop();
+  
   capture = createCapture( VIDEO );
   capture.id( "capture" );
   capture.size(cameraWidth, cameraHeight);
