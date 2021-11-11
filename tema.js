@@ -50,7 +50,7 @@ let speed = 1;
 let state = 0;
 let vCurrent = new vec2();
 let vOld = new vec2();
-let font;
+//let font;
 let loading;
 
 const modelParams = {
@@ -71,7 +71,7 @@ handTrack.load(modelParams).then(lmodel => {
 
 function preload() 
 {
-  font = loadFont('data/arial.ttf');
+//  font = loadFont('data/arial.ttf');
   loading = loadImage('data/loading.png');
 }
 
@@ -237,8 +237,19 @@ function draw()
 }
 
 //--------------------------------------------------------------------
-// mousePressed
+// action
 //--------------------------------------------------------------------
+
+function mousePressed()
+{
+  if ( isPlaying )
+  {
+    movie.loop();
+  } else
+  {
+    return;
+  }
+}
 
 function action()
 {
