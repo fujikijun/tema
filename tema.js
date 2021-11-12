@@ -35,8 +35,8 @@ class vec2
   }
 }
 
-let BASE_DISPLAY_WIDTH = 1920;
-let BASE_DISPLAY_HEIGHT = 1080;
+let BASE_DISPLAY_WIDTH = 320;//1920;
+let BASE_DISPLAY_HEIGHT = 240;//1080;
 let movie;
 let capture;
 let model = null;
@@ -105,7 +105,7 @@ function setup()
   canvas.style('top', y);
   canvas.id( "canvas" );
 
-  movie = createVideo(['data/tema.mp4']);
+  movie = createVideo(['data/fingers.mov']);
   movie.id( "video" );
   movie.hide();
   //movie.loop();
