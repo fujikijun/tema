@@ -105,7 +105,7 @@ function setup()
   canvas.style('top', y);
   canvas.id( "canvas" );
 
-  movie = createVideo(['data/fingers.mov']);
+  movie = createVideo(['data/tema.mp4']);
   movie.id( "video" );
   movie.hide();
   //movie.loop();
